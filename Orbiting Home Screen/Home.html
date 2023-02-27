@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    
+    <title>Cosmic Events Calendar</title>
+
+</head>
+
+<body>
+   <nav>
+        <div class="logo">
+            <h3>CEC</h3>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">More</a></li>
+            <li><a href="#">About Us</a></li>
+
+        </ul>
+    </nav>
+
+    <div id="square">
+        
+    </div>
+    
+    <div class="space">
+        <div class="blackhole">
+            
+        </div>
+    </div>
+    
+    
+    <div class="sun">
+        
+    </div>
+    
+    <div class="heading" >
+        <h1>COSMOS</h1>
+        <p>Man must rise above the Earth—to the top of the atmosphere and beyond—for only thus will he fully understand the world in which he lives." - Socrates, Philosopher</p>
+    </div>
+
+    <section class="wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </section>
+
+    <div class="container">
+        <div class="card">
+            <div class="content" onclick="window.location.href='https://www.youtube.com/watch?v=cxrLRbkOwKs&t=6s'";>
+                <h2>ES</h2>
+                <h3>Eclipses</h3>
+                <p>A solar eclipse occurs when the Moon passes between Earth and the Sun, thereby obscuring Earth's view of the Sun, totally or partially. Such an alignment coincides with a new moon, indicating the Moon is closest to the plane of the Earth's orbit.</p>
+                <!-- <a href="#">Read More</a> -->
+            </div>
+        </div>
+        <div class="card">
+            <div class="content" onclick="window.location.href='//www.youtube.com/watch?v=zkglsg0K1IY'";>
+                <h2>MS</h2>
+                <h3>Meteor Showers</h3>
+                <p>A meteor shower is a celestial event in which a number of meteors are observed to radiate from one point in the night sky.  These meteors are caused by streams of cosmic debris called meteoroids entering Earth's atmosphere at extremely high speeds on parallel trajectories.
+                </p>
+                <!-- <a href="#">Read More</a> -->
+            </div>
+        </div>
+        <div class="card">
+            <div class="content"  onclick="window.location.href='https://www.youtube.com/watch?v=78crD1l1sCA'";>
+                <h2>PA</h2>
+                <h3>Planetary Alignment</h3>
+                <p>Planetary alignments are,optical illusions.This lining up is specific to how these planets are seen from the Earth. Venus and Jupiter will be next to each other in the Earth’s night sky, but in reality they’re 430 million miles apart.
+                </p>
+                <!-- <a href="#" class="button">Read More</a> -->
+            </div>
+        </div>
+        <div class="card">
+            <div class="content" onclick="window.location.href='https://www.youtube.com/watch?v=0FXJUP6_O1w'";>
+                <h2>NS</h2>
+                <h3>Night Sky</h3>
+                <p>The night sky is the nighttime appearance of celestial objects like stars, planets, and the Moon, which are visible in a clear sky between sunset and sunrise, when the Sun is below the horizon.
+                </p>
+                <!-- <a href="#">Read More</a> -->
+            </div>
+        </div>
+        <div class="card">
+            <div class="content"  onclick="window.location.href='https://www.youtube.com/watch?v=sJAAi4aIOgc'";>
+                <h2>TS</h2>
+                <h3>Transit</h3>
+                <p>Transits are much rarer than eclipses. A Mercury transit occurs, on average, once every seven years. Meanwhile, Venus transits are a bit more complicated. When a Venus transit occurs, a second one follows eight years later</p>
+                <!-- <a href="#">Read More</a> -->
+            </div>
+        </div>
+        <div class="card">
+            <div class="content"  onclick="window.location.href='https://www.youtube.com/watch?v=y6LxK6sytAU'";>
+                <h2>CT</h2>
+                <h3>Comet</h3>
+                <p>Comets are large objects made of dust and ice that orbit the Sun. Best known for their long, streaming tails, these ancient objects are leftovers from the formation of the solar system 4.6 billion years ago.</p>
+                <!-- <a href="#">Read More</a> -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div class="footer">
+        <p>Footer</p>
+    </div> -->
+
+    <div class="circle1"></div>
+    
+    <script>
+        const numOfPlanets = 50
+        var colorArray = ['aliceblue', 'aqua', 'aquamarine', 'azure', 'blueviolet', 'blue', 'cadetblue', 'chartreuse', 'coral', 'cornflowerblue', 'cyan', 'crimson', 'darkblue', 'darkcyan', 'darkgoldenrod', 'darkmagenta', 'darkseagreen', 'darkorange', 'darkslateblue', 'darkorchid', 'darkslategray', 'darkturquoise', 'deeppink', 'darkviolet', 'dodgerblue', 'floralwhite', 'fuchsia', 'gold', 'greenyellow', 'honeydew', 'hotpink', 'indigo', 'lawngreen', 'lightblue', 'lightcyan', 'lightgreen', 'lightskyblue', 'lightsalmon', 'lightseagreen', 'mediumslateblue', 'mediumpurple', 'midnightblue', 'paleturquoise', 'palegreen'];
+
+        const squareDiv = document.getElementById('square')
+        for (let i = 0; i < numOfPlanets; i++) {
+            const childToAppend = document.createElement('span')
+            squareDiv.appendChild(childToAppend)
+        }
+
+        const spans = document.querySelectorAll('span')
+        spans.forEach(span => {
+            const randHeight = Math.random() * 460 + 0.8 * 720
+            const randWidth = Math.random() * 740 + 0.8 * 400
+            span.style.height = `${randHeight}px`
+            span.style.width = `${randWidth}px`
+
+            const randInterval = Math.floor(Math.random() * 69420 + 6969)
+            const randDelay = Math.floor(Math.random() * 200000)
+            span.style.animationDuration = `${randInterval}ms`
+            span.style.animationDelay = `-${randDelay}ms`
+
+            const childNode = document.createElement('div')
+            const divRadius = Math.random() * 42 + 2
+            childNode.style.height = `${divRadius}px`
+            childNode.style.width = `${divRadius}px`
+
+            const lengthOfColors = colorArray.length
+            const randomColorIndex = Math.floor(Math.random() * lengthOfColors)
+            const randomColor = colorArray[randomColorIndex]
+            childNode.style.background = randomColor
+            childNode.style.boxShadow = `0 0 1px 1px ${randomColor}`
+
+
+            span.appendChild(childNode)
+        
+            
+        })
+    </script>
+
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script>
+    VanillaTilt.init(document.querySelectorAll("nav"),{
+        max: 0,
+        glare: true,
+        speed: 300,
+        "max-glare": 0.6,
+    });
+    VanillaTilt.init(document.querySelectorAll(".card"),{
+        max: 10,
+        glare: true,
+        speed: 40,
+        "max-glare": 0.6,
+    });
+
+    </script>
+</body>
+
+</html>

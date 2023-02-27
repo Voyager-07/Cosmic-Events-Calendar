@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <nav role="navigation" class="dropdown">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Work &dtrif;</a>
+            <ul class="dropdown">
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Illustration</a></li>
+              <li><a href="#">Iconography</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    <div id="square">
+        <!-- <h1>ORBITAL</h1>
+        <p>LOADING PAGE</p> -->
+    </div>
+    
+    <script>
+        const numOfPlanets = 50
+        var colorArray = ['aliceblue', 'aqua', 'aquamarine', 'azure', 'blueviolet', 'blue', 'cadetblue', 'chartreuse', 'coral', 'cornflowerblue', 'cyan', 'crimson', 'darkblue', 'darkcyan', 'darkgoldenrod', 'darkmagenta', 'darkseagreen', 'darkorange', 'darkslateblue', 'darkorchid', 'darkslategray', 'darkturquoise', 'deeppink', 'darkviolet', 'dodgerblue', 'floralwhite', 'fuchsia', 'gold', 'greenyellow', 'honeydew', 'hotpink', 'indigo', 'lawngreen', 'lightblue', 'lightcyan', 'lightgreen', 'lightskyblue', 'lightsalmon', 'lightseagreen', 'mediumslateblue', 'mediumpurple', 'midnightblue', 'paleturquoise', 'palegreen'];
+
+
+        const squareDiv = document.getElementById('square')
+        for (let i = 0; i < numOfPlanets; i++) {
+            const childToAppend = document.createElement('span')
+            squareDiv.appendChild(childToAppend)
+        }
+
+        const spans = document.querySelectorAll('span')
+        spans.forEach(span => {
+            const randHeight = Math.random() * 460 + 0.8 * 720
+            const randWidth = Math.random() * 740 + 0.8 * 400
+            span.style.height = `${randHeight}px`
+            span.style.width = `${randWidth}px`
+
+            const randInterval = Math.floor(Math.random() * 69420 + 6969)
+            const randDelay = Math.floor(Math.random() * 200000)
+            span.style.animationDuration = `${randInterval}ms`
+            span.style.animationDelay = `-${randDelay}ms`
+
+            const childNode = document.createElement('div')
+            const divRadius = Math.random() * 42 + 2
+            childNode.style.height = `${divRadius}px`
+            childNode.style.width = `${divRadius}px`
+
+            const lengthOfColors = colorArray.length
+            const randomColorIndex = Math.floor(Math.random() * lengthOfColors)
+            const randomColor = colorArray[randomColorIndex]
+            childNode.style.background = randomColor
+            childNode.style.boxShadow = `0 0 1px 1px ${randomColor}`
+
+
+            span.appendChild(childNode)
+        
+            
+        })
+    </script>
+
+<script type="text/javascript" src="vanilla-tilt.js"></script>
+<script>
+    VanillaTilt.init(document.querySelectorAll("nav"),{
+        max: 0,
+        glare: true,
+        "max-glare": 0.7,
+
+    });
+</script>
+</body>
+
+</html>
